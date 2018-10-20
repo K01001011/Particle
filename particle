@@ -1,0 +1,37 @@
+
+sudo apt-get update && sudo apt-get dist-upgrade
+
+sudo pip install pyrebase
+sudo pip3 install pyrebase
+sudo pip3 install --upgrade google-auth-oauthlib
+
+pip install pillow
+sudo pip3 install pillow --upgrade
+
+
+---------
+sudo upt-getupdate
+---------
+
+
+
+
+
+
+
+
+python photo_booth.py --output output
+python photo_booth.py --picamera 1
+
+
+
+
+
+
+-------------------------------
+install:on python3		#21st october
+opencv				#https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
+dlib				#https://gist.github.com/ageitgey/1ac8dbe8572f3f533df6269dab35df65
+face recognition(again)		#pip3 install face_recognition
+imutils(again)			#pip3 install imutils
+picamera(again)			#sudo apt-get install python3-picamera		#pip3 install "picamera[array]"
