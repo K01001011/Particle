@@ -50,27 +50,28 @@ class Camera(object):
     def release(self):
         self.cam.release()
 
-class Camera1(object):
-
-    def __init__(self,camera = 1):
-        self.vs = VideoStream(usePiCamera=1 > 0).start()
-        self.valid = False
-        try:
-            resp = self.vs.read()
-            self.shape = resp[1].shape
-            self.valid = True
-        except:
-            self.shape = None
-
-    def get_frame(self):
-        if self.valid:
-            _,frame = self.vs.read()
-        else:
-            frame = np.ones((480,640,3), dtype=np.uint8)
-            col = (0,256,256)
-            cv2.putText(frame, "(Error: Camera not accessible)",
-                       (65,220), cv2.FONT_HERSHEY_PLAIN, 2, col)
-        return frame
-
-    def release(self):
-        self.vs.release()
+#class Camera1(object):
+#
+#    def __init__(self,camera = 1):
+#        self.vs = VideoStream(usePiCamera=1 > 0).start()
+#        self.valid = False
+#        try:
+#            resp = self.vs.read()
+#            self.shape = resp[1].shape
+#            self.valid = True
+#        except:
+#            self.shape = None
+#
+#    def get_frame(self):
+#        if self.valid:
+#            _,frame = self.vs.read()
+#        else:
+#            frame = np.ones((480,640,3), dtype=np.uint8)
+#            col = (0,256,256)
+#            cv2.putText(frame, "(Error: Camera not accessible)",
+#                       (65,220), cv2.FONT_HERSHEY_PLAIN, 2, col)
+#        return frame
+#
+#    def release(self):
+#        self.vs.release()
+#
