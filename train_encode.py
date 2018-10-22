@@ -42,8 +42,8 @@ for (i, imagePath) in enumerate(imagePaths):
 
     # detect the (x, y)-coordinates of the bounding boxes
 	# corresponding to each face in the input image
-	boxes = face_recognition.face_locations(rgb,                                            #draws boxes around faces
-		model=args["detection_method"])                                                     #CNN method is more accurate but slower. HOG is faster but less accurate.
+	boxes = face_recognition.face_locations(rgb,
+		model=args["detection_method"])                                                 #draws boxes around faces
  
 	# compute the facial embedding for the face
 	encodings = face_recognition.face_encodings(rgb, boxes)                                 #convert to 128d vectors
