@@ -1,4 +1,4 @@
-#python build_face_dataset.py --cascade haarcascade_frontalface_default.xml \
+#python facedetect.py --cascade haarcascade_frontalface_default.xml \
 	--output dataset/adrian
 from imutils.video import VideoStream
 import argparse
