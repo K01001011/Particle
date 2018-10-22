@@ -1,3 +1,5 @@
+#python recognize_faces.py --cascade /home/pi/opencv-3.3.0/data/haarcascades/haarcascade_frontalface_default.xml --encodings encodings.pickle
+
 from imutils.video import VideoStream
 from imutils.video import FPS
 import face_recognition
@@ -20,7 +22,8 @@ args = vars(ap.parse_args())
 print("[INFO] loading encodings + face detector...")
 data = pickle.loads(open(args["encodings"], "rb").read())
 detector = cv2.CascadeClassifier(args["cascade"])
- 
+#detector = cv2.CascadeClassifier('/home/pi/Downloads/abc/haarcascade_frontalface_default.xml')
+
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] starting video stream...")
 #vs = VideoStream(src=0).start()																		#comment this line and enable the line below for pi camera

@@ -3,6 +3,8 @@
 
 #https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/
 
+#python train_encode.py --dataset dataset --encodings encodings.pickle --detection-method hog
+
 
 from imutils import paths
 import face_recognition
