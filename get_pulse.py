@@ -1,4 +1,4 @@
-from lib.device import Camera1 as Camera
+from lib.device import Camera
 #from picamera import PiCamera as Camera
 from lib.processors_noopenmdao import findFaceGetPulse
 from lib.interface import plotXY, imshow, waitKey, destroyWindow
