@@ -25,9 +25,9 @@ class ipCamera(object):
         frame = cv2.imdecode(img_array, 1)
         return frame
 
-class Camera(object):
+class Camera:
 
-    def __init__(self, camera = 0):
+    def __init__(self,camera = 0):
         self.cam = cv2.VideoCapture(camera)
         self.valid = False
         try:

@@ -6,12 +6,13 @@ from cv2 import moveWindow
 import argparse
 import numpy as np
 import datetime
+from imutils.video import VideoStream
 #TODO: work on serial port comms, if anyone asks for it
 #from serial import Serial
 import socket
 import sys
 
-class getPulseApp(object):
+class getPulseApp:
 
     """
     Python application that finds a face in a webcam stream, then isolates the

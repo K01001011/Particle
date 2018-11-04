@@ -35,3 +35,6 @@ dlib				#https://gist.github.com/ageitgey/1ac8dbe8572f3f533df6269dab35df65
 face recognition(again)		#pip3 install face_recognition
 imutils(again)			#pip3 install imutils
 picamera(again)			#sudo apt-get install python3-picamera		#pip3 install "picamera[array]"
+
+
+pip3 install numpy scipy matplotlib             #for get_pulse

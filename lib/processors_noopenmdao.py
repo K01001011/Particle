@@ -37,7 +37,7 @@ class findFaceGetPulse(object):
         self.t0 = time.time()
         self.bpms = []
         self.bpm = 0
-        dpath = resource_path("haarcascade_frontalface_alt.xml")
+        dpath = resource_path("/home/pi/opencv-3.3.0/data/haarcascades/haarcascade_frontalface_alt.xml")
         if not os.path.exists(dpath):
             print("Cascade file not present!")
         self.face_cascade = cv2.CascadeClassifier(dpath)
@@ -122,15 +122,15 @@ class findFaceGetPulse(object):
                                                   cv2.COLOR_BGR2GRAY))
         col = (100, 255, 100)
         if self.find_faces:
-            cv2.putText(
-                self.frame_out, "Press 'C' to change camera (current: %s)" % str(
-                    cam),
-                (10, 25), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
+            #cv2.putText(
+            #    self.frame_out, "Press 'C' to change camera (current: %s)" % str(
+            #        cam),
+            #    (10, 25), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
             cv2.putText(
                 self.frame_out, "Press 'S' to lock face and begin",
                        (10, 50), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
-            cv2.putText(self.frame_out, "Press 'Esc' to quit",
-                       (10, 75), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
+            #cv2.putText(self.frame_out, "Press 'Esc' to quit",
+            #           (10, 75), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
             self.data_buffer, self.times, self.trained = [], [], False
             detected = list(self.face_cascade.detectMultiScale(self.gray,
                                                                scaleFactor=1.3,
@@ -156,17 +156,17 @@ class findFaceGetPulse(object):
             return
         if set(self.face_rect) == set([1, 1, 2, 2]):
             return
-        cv2.putText(
-            self.frame_out, "Press 'C' to change camera (current: %s)" % str(
-                cam),
-            (10, 25), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
-        cv2.putText(
-            self.frame_out, "Press 'S' to restart",
-                   (10, 50), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
-        cv2.putText(self.frame_out, "Press 'D' to toggle data plot",
-                   (10, 75), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
-        cv2.putText(self.frame_out, "Press 'Esc' to quit",
-                   (10, 100), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
+        #cv2.putText(
+        #    self.frame_out, "Press 'C' to change camera (current: %s)" % str(
+        #        cam),
+        #    (10, 25), cv2.FONT_HERSHEY_PLAIN, 1.25, col)
+        #cv2.putText(
+        #    self.frame_out, "Press 'S' to restart",
+        #           (10, 50), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
+        #cv2.putText(self.frame_out, "Press 'D' to toggle data plot",
+        #           (10, 75), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
+        #cv2.putText(self.frame_out, "Press 'Esc' to quit",
+        #           (10, 100), cv2.FONT_HERSHEY_PLAIN, 1.5, col)
 
         forehead1 = self.get_subface_coord(0.5, 0.18, 0.25, 0.15)
         self.draw_rect(forehead1)
@@ -234,5 +234,7 @@ class findFaceGetPulse(object):
             else:
                 text = "(estimate: %0.1f bpm)" % (self.bpm)
             tsize = 1
+            #cv2.putText(self.frame_out, text,
+            #           (int(x - w / 2), int(y)), cv2.FONT_HERSHEY_PLAIN, tsize, col)
             cv2.putText(self.frame_out, text,
-                       (int(x - w / 2), int(y)), cv2.FONT_HERSHEY_PLAIN, tsize, col)
+                       (50, 200), cv2.FONT_HERSHEY_PLAIN, tsize, col)
