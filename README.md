@@ -5,10 +5,10 @@ What does one do after getting up in the morning? Look in the mirror of course. 
 It comprises a Python application running on a Raspberry Pi, which in turn is linked to a mobile Android application. The Raspberry Pi is used as it is extremely portable and can be plugged into any external monitor. The Android application is used to customize the layout of the app running on the Pi. A web camera connected to the Pi allows for unique identification of different users via their face, and also fulfills the purpose of the display acting as a pseudo mirror. It also scans the face of the user, specifically their forehead, and calculates their heartbeat in real time using a Python application with OpenCV. 
   
   
-face_datasets - capture images for face recognition  
-train_encode - train images for face recognition  
-recognize_faces - face recognition  
-get_pulse - measure heart rate from webcam
+face_datasets.py - capture images for face recognition  
+train_encode.py - train images for face recognition  
+recognize_faces.py - face recognition  
+get_pulse.py - measure heart rate from webcam
 
 backend - firebase
 
